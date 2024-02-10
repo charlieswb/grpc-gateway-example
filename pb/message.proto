@@ -1,0 +1,32 @@
+syntax = "proto3";
+package messaging;
+option go_package = "restgrpc/pb/messaging;messaging";
+
+import "google/api/annotations.proto";
+
+message StringMessage {
+  string text = 1;
+}
+
+message QuoteRequest {
+  string author = 2;
+}
+
+message QuoteReply {
+  string quote = 1;
+  string author = 2;
+}
+
+service QuoteService {
+  rpc Echo(StringMessage) returns (StringMessage) {
+    option (google.api.http) = {
+      post: "/echo"
+      body: "*"
+    };
+  }
+  rpc GetQuote(QuoteRequest) returns (QuoteReply) {
+    option (google.api.http) = {
+      get: "/quote/{author}"
+    };
+  }
+}
