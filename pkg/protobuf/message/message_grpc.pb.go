@@ -4,7 +4,7 @@
 // - protoc             v4.23.4
 // source: message.proto
 
-package messaging
+package message
 
 import (
 	context "context"
@@ -19,8 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	QuoteService_Echo_FullMethodName     = "/messaging.QuoteService/Echo"
-	QuoteService_GetQuote_FullMethodName = "/messaging.QuoteService/GetQuote"
+	QuoteService_Echo_FullMethodName     = "/msg.QuoteService/Echo"
+	QuoteService_GetQuote_FullMethodName = "/msg.QuoteService/GetQuote"
 )
 
 // QuoteServiceClient is the client API for QuoteService service.
@@ -129,7 +129,7 @@ func _QuoteService_GetQuote_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var QuoteService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "messaging.QuoteService",
+	ServiceName: "msg.QuoteService",
 	HandlerType: (*QuoteServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

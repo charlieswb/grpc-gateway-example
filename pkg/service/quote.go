@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 	"math/rand"
-	pb "restgrpc/pkg/protobuf"
+	pb "restgrpc/pkg/protobuf/message"
 )
 
 type quoteService struct {

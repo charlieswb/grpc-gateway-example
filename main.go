@@ -17,7 +17,7 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/reflection"
 
-	pb "restgrpc/pkg/protobuf"
+	pb "restgrpc/pkg/protobuf/message"
 	"restgrpc/pkg/service"
 )
 

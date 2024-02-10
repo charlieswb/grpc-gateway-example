@@ -32,8 +32,8 @@ go install \
 ### 3. Generate gRPC
 
 ```sh
-protoc -I ./pb --go_out=./pkg/protobuf/ --go_opt=paths=source_relative \
-	--go-grpc_out=./pkg/protobuf/ --go-grpc_opt=paths=source_relative \
+protoc -I ./pb --go_out=./pkg/protobuf --go_opt=module=restgrpc/pb \
+	--go-grpc_out=./pkg/protobuf --go-grpc_opt=module=restgrpc/pb \
 	pb/*.proto
 ```
 
@@ -96,8 +96,9 @@ service QuoteService {
 ### 8. Generate REST stubs
 
 ```sh
-protoc -I ./pb --grpc-gateway_out ./pkg/protobuf \
-    --grpc-gateway_opt paths=source_relative \
+protoc -I ./pb \
+    --grpc-gateway_out=./pkg/protobuf \
+    --grpc-gateway_opt=module=restgrpc/pb \
     pb/*.proto
 ```
 

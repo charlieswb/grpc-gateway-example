@@ -2,11 +2,11 @@
 // source: message.proto
 
 /*
-Package messaging is a reverse proxy.
+Package message is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package messaging
+package message
 
 import (
 	"context"
@@ -123,7 +123,7 @@ func RegisterQuoteServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/messaging.QuoteService/Echo", runtime.WithHTTPPathPattern("/echo"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/msg.QuoteService/Echo", runtime.WithHTTPPathPattern("/echo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -148,7 +148,7 @@ func RegisterQuoteServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/messaging.QuoteService/GetQuote", runtime.WithHTTPPathPattern("/quote/{author}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/msg.QuoteService/GetQuote", runtime.WithHTTPPathPattern("/quote/{author}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -212,7 +212,7 @@ func RegisterQuoteServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/messaging.QuoteService/Echo", runtime.WithHTTPPathPattern("/echo"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/msg.QuoteService/Echo", runtime.WithHTTPPathPattern("/echo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -234,7 +234,7 @@ func RegisterQuoteServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/messaging.QuoteService/GetQuote", runtime.WithHTTPPathPattern("/quote/{author}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/msg.QuoteService/GetQuote", runtime.WithHTTPPathPattern("/quote/{author}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

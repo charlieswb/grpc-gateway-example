@@ -1,6 +1,6 @@
 syntax = "proto3";
-package messaging;
-option go_package = "restgrpc/pb/messaging;messaging";
+package msg;
+option go_package = "restgrpc/pb/message;message";
 
 import "google/api/annotations.proto";
 
