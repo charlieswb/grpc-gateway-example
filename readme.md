@@ -51,7 +51,7 @@ Implement proto server interface type (pb.QuoteServiceServer)
 
 ## Add REST Steps
 
-### 6. Copy base proto
+### 6. Get proto libs
 
 - [google/api](/pb/google/api)
 - [validate](/pb/validate/validate.proto)
@@ -60,9 +60,6 @@ or get from source
 
 - [google: googleapi](https://github.com/googleapis/googleapis/tree/master/google/api)
 - [bufbuild: validate](https://github.com/bufbuild/protoc-gen-validate/tree/main/validate)
-
----
-
 
 ### 7. Add http tag for REST in proto
 
